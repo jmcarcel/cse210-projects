@@ -1,6 +1,6 @@
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    public static List<Entry> _entries = new List<Entry>();
     
     public Journal()
     {
@@ -31,7 +31,9 @@ public class Journal
     }
     public void LoadFromFile(string file)
     {
-        string[] lines = System.IO.File.ReadAllLines(file);
+        List<Entry> _entries = new List<Entry>();
+        string filename = "Journal.txt";
+        string[] lines = System.IO.File.ReadAllLines(filename);
 
         foreach (string line in lines)
         {
