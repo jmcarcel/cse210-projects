@@ -19,21 +19,20 @@ public class Journal
         }
     }
 
-    public void SaveToFile(string file)
+    public void SaveToFile(string fileName)
     {
-        using (StreamWriter outputFile = new StreamWriter(file))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine(entry);
+                outputFile.WriteLine($"{entry._date}, {entry._promptText}, {entry._entryText}");
             }
         }
     }
-    public void LoadFromFile(string file)
+    public void LoadFromFile(string fileName)
     {
         List<Entry> _entries = new List<Entry>();
-        string filename = "Journal.txt";
-        string[] lines = System.IO.File.ReadAllLines(filename);
+        string[] lines = System.IO.File.ReadAllLines(fileName);
 
         foreach (string line in lines)
         {
