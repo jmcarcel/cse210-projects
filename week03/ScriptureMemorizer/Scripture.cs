@@ -1,12 +1,12 @@
 public class Scripture
 {
     private Reference _reference;
-    private List<Word> _words = new List<Word>();
+    private List<Word> _words;
 
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
-        _words = text.Split(' ').Select(word => new Word(word)).ToList();
+        _words = new List<Word>()
     }
     public void HideRandomsWords(int numberToHide)
     {
