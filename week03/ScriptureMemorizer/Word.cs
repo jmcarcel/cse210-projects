@@ -25,6 +25,21 @@ public class Word
 
     public string GetDisplayText()
     {
-        return _isHidden ? "_____" : _text;
+         if (_isHidden)
+        {
+            char[] characters = _text.ToCharArray();
+
+            // Replace each character with undescore
+            for (int i = 0; i < characters.Length; i++)
+            {
+                characters[i] = '_';
+            }
+
+            return new string(characters);
+        }
+        else
+        {
+            return _text;
+        }
     }
 }
