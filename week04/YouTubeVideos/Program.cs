@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Video> videos = new List<Video>();
+        List<Video> _videos = new List<Video>();
 
         Video video1 = new Video();
 
@@ -34,12 +34,12 @@ class Program
         video3.AddComments("Grace", "Excellent music!");
         video3.AddComments("Ana", "This song brigs me hope");
 
-        videos.Add(video1);
-        videos.Add(video2);
-        videos.Add(video3);
+        _videos.Add(video1);
+        _videos.Add(video2);
+        _videos.Add(video3);
 
         int count = 1;
-        foreach (Video video in videos)
+        foreach (Video video in _videos)
         {
             System.Console.WriteLine($"Videos #{count}");
             video.DisplayVideo();
