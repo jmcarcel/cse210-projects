@@ -4,11 +4,11 @@ public class Video
     public string _title;
     public string _author;
     public int _length;
-    public static List<Comment> _comments = new List<Comment>();
+    public static List<Comment> _comments;
 
     public Video()
     {
-       
+       _comments = new List<Comment>();
     }
 
     public int GetCommentsCount()
@@ -17,12 +17,12 @@ public class Video
     }
     public void AddComments(string person, string textcomment)
     {
-        Comment newcomment = new Comment(person, textcomment);
-        _comments.Add(newcomment);
+        Comment newComment = new Comment(person, textcomment);
+        _comments.Add(newComment);
     }
     public void DisplayVideo()
     {
-        Console.WriteLine($"Title: {_title}\nAuthor: {_author}\nLength: {_length}secs");
+        Console.WriteLine($"Title: {_title}\nAuthor: {_author}\nLength: {_length} secs");
         Console.WriteLine($"Number of comments: {GetCommentsCount()}");
 
         int count = 1;
@@ -32,6 +32,7 @@ public class Video
             comment.DisplayComment();
             count++;
         }
+        Console.WriteLine();
     }
   
 }

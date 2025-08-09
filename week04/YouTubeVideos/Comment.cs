@@ -12,5 +12,6 @@ public class Comment
     public void DisplayComment()
     {
         Console.WriteLine($"{_person}: {_textComment}");
+        Console.WriteLine();
     }
 }
